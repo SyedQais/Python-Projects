@@ -31,12 +31,15 @@ if "dom_content" in st.session_state:
             st.write("Parsing the content")
           
             # Retrieve the body_content from session state instead of local scope
-            # you canuse both raw contemt and cleaned ccontent based on your preference, i have added code for both, to use cleaned content uncomment the code below and comment out the other code.
+            # you can use both raw content and cleaned content based on your preference, i have added code for both, to use cleaned content uncomment the code below and comment out the other code.
             # content_to_parse = st.session_state.dom_content
             content_to_parse = st.session_state.raw_body_content
-            
+              #if you want to get more reliable results use raw content but if you want to use less tokens use cleaned content.
+
+          
             # Pass the retrieved content to your gemini function
             result = gemini(content_to_parse, parse_description)
             st.write(result)
+
 
 
