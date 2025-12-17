@@ -7,7 +7,7 @@ from scrape import (scrape_website,
 
 from gemini_parse import gemini
 
-st.title("AI Web Scarapper")
+st.title("AI Web Scraper")
 url = st.text_input("Enter website url here")
 
 if st.button("scrape site"):
@@ -40,6 +40,7 @@ if "dom_content" in st.session_state:
             # Pass the retrieved content to your gemini function
             result = gemini(content_to_parse, parse_description)
             st.write(result)
+
 
 
 
