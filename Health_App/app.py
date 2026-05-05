@@ -59,7 +59,8 @@ engine = create_engine(
 def load_data():
     return pd.read_sql("SELECT * FROM health_data", engine)
 
-df = load_data()
+with st.spinner("Analyzing your data..."):
+    df = load_data()
 
 # -----------------------------
 # HEADER
